@@ -1,16 +1,20 @@
 package com.example.springplayer.model;
 
+import com.example.springplayer.constant.Permission;
+import com.example.springplayer.constant.Role;
+import com.example.springplayer.converter.PermissionEnumConverter;
+import com.example.springplayer.converter.RoleEnumConverter;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-@Table(name="player")
+@Table(name = "player")
 @Data
 @Builder
 @NoArgsConstructor
@@ -24,6 +28,12 @@ public class Player {
     @Column(name = "name")
     private String name;
 
-    @ManyToMany
-    private Set<Role> roles = new HashSet<>();
+    @Convert(converter = PermissionEnumConverter.class)
+    private Permission permission;
+
+    @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
+    @CollectionTable(name = "player_role", joinColumns = {@JoinColumn(name = "player_id")})
+    @Column(name = "role")
+    @Convert(converter = RoleEnumConverter.class)
+    private List<Role> roles = new ArrayList<>();
 }

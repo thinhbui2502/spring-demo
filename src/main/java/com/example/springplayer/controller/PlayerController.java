@@ -2,6 +2,7 @@ package com.example.springplayer.controller;
 
 import com.example.springplayer.model.Player;
 import com.example.springplayer.model.dto.PlayerDto;
+import com.example.springplayer.repository.PLayerRepository;
 import com.example.springplayer.service.PlayerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.env.Environment;
