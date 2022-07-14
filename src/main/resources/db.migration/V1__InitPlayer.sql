@@ -7,4 +7,7 @@ insert into player(name)
 values ('cr7'),
        ('shaw'),
        ('kante'),
+       ('bruno'),
+       ('messi'),
+       ('de gea'),
        ('de jong');
