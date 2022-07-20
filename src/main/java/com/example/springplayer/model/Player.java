@@ -4,10 +4,7 @@ import com.example.springplayer.constant.Permission;
 import com.example.springplayer.constant.Role;
 import com.example.springplayer.converter.PermissionEnumConverter;
 import com.example.springplayer.converter.RoleEnumConverter;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.ArrayList;

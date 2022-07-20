@@ -1,13 +1,16 @@
-create table player (
+CREATE SCHEMA IF NOT EXISTS migrations;
+
+CREATE TABLE IF NOT EXISTS migrations.player
+(
     id SERIAL primary key,
-    name varchar (255) not null
+    name varchar(255) not null
 );
 
-insert into player(name)
-values ('cr7'),
-       ('shaw'),
-       ('kante'),
-       ('bruno'),
-       ('messi'),
-       ('de gea'),
-       ('de jong');
+INSERT INTO migrations.player(name)
+values (1,'cr7'),
+       (2,'shaw'),
+       (3,'kante'),
+       (4,'bruno'),
+       (5,'messi'),
+       (6,'de gea'),
+       (7,'de jong');
